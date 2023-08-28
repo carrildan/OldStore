@@ -1,6 +1,7 @@
 import './App.css';
-import TopNav from './components/TopNav/TopNav';
-import CatNav from './components/CatNav/CatNav';
+import TopNav from './components/TopNav';
+import CatNav from './components/CatNav';
+import MainComponent from "./components/MainComponent";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       {/* ------------------------------------------- HEADER ------------------------------------------- */}
       <TopNav/>
       <CatNav/>
+      <MainComponent />
       {/* ------------------------------------------- HEADER END ------------------------------------------- */}
       
     </div>
