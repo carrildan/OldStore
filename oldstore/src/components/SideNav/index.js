@@ -19,10 +19,10 @@ const SideNav = () =>{
                     <div className="accordion-collapse collapse show" id="accordion-heading-one">
                         <div className="accordion-body">
                             <ul>
-                                <li className="sub-items"><a href="#">Coats</a></li>
-                                <li className="sub-items"><a href="#">Boots</a></li>
-                                <li className="sub-items"><a href="#">Party Wear</a></li>
-                                <li className="sub-items"><a href="#">Shirts</a></li>
+                                <li className="sub-items"><a href="#">Casacos</a></li>
+                                <li className="sub-items"><a href="#">Botas</a></li>
+                                <li className="sub-items"><a href="#">Ropa Fiesta</a></li>
+                                <li className="sub-items"><a href="#">Camisas</a></li>
                             </ul>
                         </div>
                     </div>
