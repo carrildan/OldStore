@@ -3,7 +3,7 @@ import "./_top-nav.scss";
 const TopNav = () =>{
     return(
         <div className="header bg-dark">
-            <div className="row">
+            <div className="row top-nav-row">
                 <div className="brand my-1">
                     <h1>Old Store</h1>
                 </div>
