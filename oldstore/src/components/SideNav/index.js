@@ -1,6 +1,9 @@
+import accordionSlice from "../../Redux/Accordion/accordionSlice";
 import "./_side-nav.scss";
+import { useSelector } from "react-redux";
 
 const SideNav = () =>{
+    const accordionData = useSelector(accordionSlice.getInitialState);
     return(
         <div className="side-nav">
             <div className="section-title">
@@ -8,26 +11,33 @@ const SideNav = () =>{
             </div>
 
             <div className="accordion">
-                <div className="accordion-item individual-category">
-                    <div className="accordion-header">
-                        <button className="accordion-button" data-bs-target="#accordion-heading-one" data-bs-toggle="collapse">
-                            <div className="category-title">
-                                <a href="#">Men</a>
+                {
+                    accordionData.map((accordionCategory,key)=>{
+                        return(
+                            <div className="accordion-item individual-category">
+                                <div className="accordion-header">
+                                    <button className="accordion-button" data-bs-target={"#collapse"+key} data-bs-toggle="collapse">
+                                        <div className="category-title">
+                                            <a href="#">{accordionCategory.category}</a>
+                                        </div>
+                                    </button>
+                                </div>
+                                <div className="accordion-collapse collapse show" id={"collapse"+key}>
+                                    <div className="accordion-body">
+                                        <ul>
+                                            {
+                                                accordionCategory.items.map((item)=>{
+                                                    return <li className="sub-items"><a href="#">{item}</a></li>                                  
+                                                })
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
+            
                             </div>
-                        </button>
-                    </div>
-                    <div className="accordion-collapse collapse show" id="accordion-heading-one">
-                        <div className="accordion-body">
-                            <ul>
-                                <li className="sub-items"><a href="#">Casacos</a></li>
-                                <li className="sub-items"><a href="#">Botas</a></li>
-                                <li className="sub-items"><a href="#">Ropa Fiesta</a></li>
-                                <li className="sub-items"><a href="#">Camisas</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
+                        )
+                    })
+                }
             </div>
         </div>
     )
