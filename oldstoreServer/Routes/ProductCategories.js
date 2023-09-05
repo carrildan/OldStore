@@ -11,7 +11,7 @@ const pool = mysql.createPool({
     multipleStatements : true
 })
 
-productCategories.get("/",(req,res)=>{
+productCategories.get("/productCategories",(req,res)=>{
     let categoryData;
  
             pool.query("Select * from categories",(error,categories)=>{
@@ -26,4 +26,16 @@ productCategories.get("/",(req,res)=>{
     
 }) 
 
+productCategories.get("/getProducts",(req,res)=>{
+    let productData;
+
+    pool.query("Select * from products",(error,rows)=>{
+        if(error){
+            res.status(500).send(error);
+        }else{
+            productData = rows;
+            console.log(res.status(200).send(productData));
+        }
+    })
+})
 module.exports = productCategories;
