@@ -35,7 +35,7 @@ const SideNav = () =>{
                                             <ul>
                                                 {
                                                     accordionData.map((subCategory)=>{
-                                                        if(accordionCategory.id===subCategory.parent_category_id){
+                                                        if(accordionCategory.id===subCategory.parent_category_id){                                                            
                                                             return <li className="sub-items"><a href="#">{subCategory.category}</a></li>
                                                         }
                                                     })

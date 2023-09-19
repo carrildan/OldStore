@@ -8,8 +8,8 @@ const initialState = {
 }
     
 
-const ProductSlice = createSlice({
-    name: "Products",
+const productSlice = createSlice({
+    name: "products",
     initialState,
     reducers:{},
     extraReducers:{
@@ -27,4 +27,4 @@ const ProductSlice = createSlice({
 
     }
 })
-export default ProductSlice.reducer;
+export default productSlice.reducer;
