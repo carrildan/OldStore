@@ -6,11 +6,17 @@ import { getProducts } from "../../Redux/Product/productAction";
 
 const Products = () =>{
     const productData = useSelector(state=>state.pr.products);
+    const cart = useSelector(state=>state.cr);
+
     const dispatch = useDispatch();
 
     useEffect(()=>{
         dispatch(getProducts());
     },[])
+
+    const addToCart=(itemData)=>{
+        console.log(itemData)
+    }
 
     return(
         <div className="products-container">
@@ -34,7 +40,7 @@ const Products = () =>{
                             </div>
                         </div>
 
-                        <div className="my-3">
+                        <div className="my-3" onClick={()=>addToCart(product)}>
                             <div className="cart-button">
                                 <div className="cart-icon-container">
                                     <i className="fa fa-shopping-cart mx-4"/>
